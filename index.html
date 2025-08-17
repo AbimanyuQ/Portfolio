@@ -5,106 +5,275 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abimanyu - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .skill-card {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+        
+        .skill-card:hover {
+            transform: rotateY(10deg) rotateX(5deg);
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        .floating:nth-child(odd) {
+            animation-delay: -2s;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(5px) rotate(-1deg); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .modal-backdrop {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
     <!-- Header -->
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-xl relative z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-800">Abimanyu</a>
-            <div class="flex space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-gray-800">About</a>
-                <a href="#skills" class="text-gray-600 hover:text-gray-800">Skills</a>
-                <a href="#projects" class="text-gray-600 hover:text-gray-800">Projects</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-800">Contact</a>
+            <a href="#" class="text-3xl font-bold text-transparent bg-clip-text gradient-bg">Abimanyu</a>
+            <div class="flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium">Contact</a>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gray-800 text-white text-center py-20">
-        <h1 class="text-5xl font-bold">Welcome to My Portfolio</h1>
-        <p class="text-xl mt-4">I'm a passionate developer with 4 years of experience in IT.</p>
-        <a href="#contact" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-8 inline-block">Get in Touch</a>
+    <section class="gradient-bg text-white text-center py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10">
+            <h1 class="text-7xl font-black mb-6 floating">Welcome to My Portfolio</h1>
+            <p class="text-2xl mb-12 font-light">I'm a passionate developer with 4 years of experience in IT.</p>
+            <a href="#contact" class="bg-white text-indigo-600 hover:bg-indigo-50 font-bold py-4 px-12 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">Get in Touch</a>
+        </div>
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white opacity-10 rounded-full floating"></div>
+        <div class="absolute top-40 right-20 w-32 h-32 bg-white opacity-5 rounded-full floating"></div>
+        <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-white opacity-10 rounded-full floating"></div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20">
+    <section id="about" class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 text-center">
-                    <img src="https://api.dicebear.com/8.x/initials/svg?seed=Abimanyu" alt="Abimanyu" class="rounded-full mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 text-gray-800">About Me</h2>
+            <div class="flex flex-col lg:flex-row items-center max-w-6xl mx-auto">
+                <div class="lg:w-1/3 text-center mb-12 lg:mb-0">
+                    <div class="relative">
+                        <img src="https://api.dicebear.com/8.x/initials/svg?seed=Abimanyu" alt="Abimanyu" class="rounded-full mx-auto w-64 h-64 shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
+                    </div>
                 </div>
-                <div class="md:w-2/3 mt-8 md:mt-0 md:ml-8">
-                    <p class="text-lg">
+                <div class="lg:w-2/3 lg:ml-16">
+                    <p class="text-xl leading-relaxed text-gray-700 mb-8">
                         Hello! I'm a developer with a background in Python, Node.js, React.js, MySQL, and Laravel. I am currently expanding my skills in frontend development to create beautiful and intuitive user interfaces. I am passionate about building solutions that solve real-world problems and I am always eager to learn new technologies.
                     </p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-indigo-600">4+</div>
+                            <div class="text-gray-600 font-medium">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-indigo-600">50+</div>
+                            <div class="text-gray-600 font-medium">Projects Completed</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="bg-gray-200 py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">Vue.js</h3>
+    <section id="skills" class="py-24 bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 opacity-50"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-5xl font-bold text-center mb-16 text-white">My Expertise</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+                <!-- Vue.js Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('vue')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">🟢</div>
+                        <h3 class="text-xl font-bold text-white">Vue.js</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">85% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">React.js</h3>
+
+                <!-- React.js Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('react')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">⚛️</div>
+                        <h3 class="text-xl font-bold text-white">React.js</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">90% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">Laravel</h3>
+
+                <!-- Laravel Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('laravel')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">🔴</div>
+                        <h3 class="text-xl font-bold text-white">Laravel</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">95% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">API</h3>
+
+                <!-- API Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('api')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">🔗</div>
+                        <h3 class="text-xl font-bold text-white">API</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">88% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">Node.js</h3>
+
+                <!-- Node.js Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('node')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">💚</div>
+                        <h3 class="text-xl font-bold text-white">Node.js</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">80% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">RestAPI</h3>
+
+                <!-- RestAPI Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('restapi')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">🚀</div>
+                        <h3 class="text-xl font-bold text-white">RestAPI</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 92%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">92% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">Python</h3>
+
+                <!-- Python Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('python')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">🐍</div>
+                        <h3 class="text-xl font-bold text-white">Python</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">85% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">MySQL</h3>
+
+                <!-- MySQL Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('mysql')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">🗄️</div>
+                        <h3 class="text-xl font-bold text-white">MySQL</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">90% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">Server Management</h3>
+
+                <!-- Server Management Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('server')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold text-white">Server Mgmt</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 78%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">78% Proficiency</span>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform duration-300">
-                    <h3 class="text-xl font-bold">JavaScript</h3>
+
+                <!-- JavaScript Skill -->
+                <div class="skill-card cursor-pointer" onclick="openModal('javascript')">
+                    <div class="glass-effect p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                        <div class="text-5xl mb-4">📜</div>
+                        <h3 class="text-xl font-bold text-white">JavaScript</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+                            <div class="progress-bar h-2 rounded-full" style="width: 93%"></div>
+                        </div>
+                        <span class="text-gray-300 text-sm">93% Proficiency</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20">
+    <section id="projects" class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 class="text-5xl font-bold text-center mb-16 text-gray-800">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <!-- Project 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" alt="Laravel Admin Project" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Laravel Admin Panel</h3>
-                        <p class="text-gray-700 mb-4">Admin project using Laravel with strong JWT authentication to control user data and work projects. A full-control admin panel mixed with Vue.js.</p>
-                        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                    <div class="relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" alt="Laravel Admin Project" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Laravel Admin Panel</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Admin project using Laravel with strong JWT authentication to control user data and work projects. A full-control admin panel mixed with Vue.js.</p>
+                        <a href="#" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                            View Project →
+                        </a>
                     </div>
                 </div>
                 <!-- Project 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Dolby_Laboratories_logo.svg/1200px-Dolby_Laboratories_logo.svg.png" alt="Music Mastering Project" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Music Mastering API</h3>
-                        <p class="text-gray-700 mb-4">A project in Vue.js and PHP that uses a music mastering API (like Dolby) to validate duplicate music and enhance audio quality from normal to master.</p>
-                        <a href="#" class="text-blue-500 hover:underline">View Project</a>
+                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                    <div class="relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Dolby_Laboratories_logo.svg/1200px-Dolby_Laboratories_logo.svg.png" alt="Music Mastering Project" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black opacity-50"></div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Music Mastering API</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">A project in Vue.js and PHP that uses a music mastering API (like Dolby) to validate duplicate music and enhance audio quality from normal to master.</p>
+                        <a href="#" class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+                            View Project →
+                        </a>
                     </div>
                 </div>
             </div>
@@ -112,23 +281,249 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-gray-800 text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-            <p class="text-lg mb-8">I'm available for freelance work and exciting new projects. Feel free to get in touch!</p>
-            <div class="flex justify-center space-x-8">
-                <a href="mailto:abimanyugunasekaran2001@gmail.com" class="text-blue-400 hover:underline text-xl">abimanyugunasekaran2001@gmail.com</a>
-                <p class="text-xl">9025367817</p>
+    <section id="contact" class="gradient-bg text-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="text-5xl font-bold mb-8">Let's Work Together</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">I'm available for freelance work and exciting new projects. Let's create something amazing together!</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12">
+                <a href="mailto:abimanyugunasekaran2001@gmail.com" class="flex items-center bg-white text-indigo-600 px-8 py-4 rounded-full font-semibold hover:bg-indigo-50 transition-all duration-300 transform hover:scale-105">
+                    <span class="mr-3">📧</span>
+                    abimanyugunasekaran2001@gmail.com
+                </a>
+                <div class="flex items-center bg-white bg-opacity-20 px-8 py-4 rounded-full font-semibold">
+                    <span class="mr-3">📱</span>
+                    9025367817
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-4">
+    <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Abimanyu. All rights reserved.</p>
+            <p class="text-gray-400">&copy; 2025 Abimanyu. All rights reserved. Built with passion and code.</p>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div id="skillModal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50">
+        <div class="bg-white rounded-3xl p-8 max-w-2xl mx-4 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="modalTitle" class="text-3xl font-bold text-gray-800"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-indigo-600">Experience Overview</h4>
+                    <div class="space-y-3" id="modalExperience">
+                        <!-- Experience content will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 text-indigo-600">Key Projects</h4>
+                    <div class="space-y-3" id="modalProjects">
+                        <!-- Projects content will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4 text-indigo-600">Skills & Technologies</h4>
+                <div id="modalSkills" class="flex flex-wrap gap-2">
+                    <!-- Skills tags will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Skill data structure
+        const skillsData = {
+            vue: {
+                title: "Vue.js",
+                experience: "2 years of experience",
+                description: "Building dynamic and reactive user interfaces with Vue.js ecosystem",
+                projects: [
+                    "E-commerce Dashboard",
+                    "Music Mastering Interface",
+                    "Admin Panel Components"
+                ],
+                skills: ["Vue 3", "Vuex", "Vue Router", "Nuxt.js", "Composition API"]
+            },
+            react: {
+                title: "React.js",
+                experience: "2.5 years of experience",
+                description: "Creating modern web applications with React and its ecosystem",
+                projects: [
+                    "Social Media Platform",
+                    "Project Management Tool",
+                    "Real-time Chat Application"
+                ],
+                skills: ["React Hooks", "Redux", "Next.js", "React Native", "Context API"]
+            },
+            laravel: {
+                title: "Laravel",
+                experience: "3 years of experience",
+                description: "Backend development with Laravel framework for robust web applications",
+                projects: [
+                    "JWT Authentication System",
+                    "REST API Development",
+                    "Content Management System"
+                ],
+                skills: ["Eloquent ORM", "Blade Templates", "Artisan CLI", "Laravel Mix", "Queue Management"]
+            },
+            api: {
+                title: "API Development",
+                experience: "2.5 years of experience",
+                description: "Designing and implementing RESTful APIs and third-party integrations",
+                projects: [
+                    "Payment Gateway Integration",
+                    "Social Media API",
+                    "Music Processing API"
+                ],
+                skills: ["REST APIs", "GraphQL", "API Documentation", "Postman", "API Security"]
+            },
+            node: {
+                title: "Node.js",
+                experience: "2 years of experience",
+                description: "Server-side JavaScript development with Node.js and Express",
+                projects: [
+                    "Real-time Chat Server",
+                    "File Upload Service",
+                    "Microservices Architecture"
+                ],
+                skills: ["Express.js", "Socket.io", "MongoDB", "JWT", "NPM Packages"]
+            },
+            restapi: {
+                title: "REST API",
+                experience: "3 years of experience",
+                description: "Building scalable and efficient REST API endpoints",
+                projects: [
+                    "E-commerce API",
+                    "User Management API",
+                    "Data Analytics API"
+                ],
+                skills: ["HTTP Methods", "Status Codes", "API Versioning", "Rate Limiting", "CORS"]
+            },
+            python: {
+                title: "Python",
+                experience: "2 years of experience",
+                description: "Python development for automation, data processing, and web applications",
+                projects: [
+                    "Data Analysis Scripts",
+                    "Web Scraping Tools",
+                    "Automation Scripts"
+                ],
+                skills: ["Django", "Flask", "Pandas", "NumPy", "Web Scraping"]
+            },
+            mysql: {
+                title: "MySQL",
+                experience: "3 years of experience",
+                description: "Database design, optimization, and management with MySQL",
+                projects: [
+                    "E-commerce Database",
+                    "User Management System",
+                    "Analytics Database"
+                ],
+                skills: ["Database Design", "Query Optimization", "Indexing", "Stored Procedures", "Backup & Recovery"]
+            },
+            server: {
+                title: "Server Management",
+                experience: "2 years of experience",
+                description: "Linux server administration and cloud deployment",
+                projects: [
+                    "AWS EC2 Deployment",
+                    "Docker Containerization",
+                    "CI/CD Pipeline Setup"
+                ],
+                skills: ["Linux", "AWS", "Docker", "Nginx", "SSL Configuration"]
+            },
+            javascript: {
+                title: "JavaScript",
+                experience: "3 years of experience",
+                description: "Modern JavaScript development with ES6+ features",
+                projects: [
+                    "Interactive Web Applications",
+                    "Browser Extensions",
+                    "DOM Manipulation Projects"
+                ],
+                skills: ["ES6+", "Async/Await", "Promises", "DOM API", "Local Storage"]
+            }
+        };
+
+        function openModal(skill) {
+            const modal = document.getElementById('skillModal');
+            const modalContent = document.getElementById('modalContent');
+            const data = skillsData[skill];
+
+            if (!data) return;
+
+            // Populate modal content
+            document.getElementById('modalTitle').textContent = data.title;
+            
+            // Experience section
+            document.getElementById('modalExperience').innerHTML = `
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="font-semibold text-gray-800">${data.experience}</div>
+                    <div class="text-gray-600 mt-2">${data.description}</div>
+                </div>
+            `;
+
+            // Projects section
+            document.getElementById('modalProjects').innerHTML = data.projects.map(project => 
+                `<div class="bg-indigo-50 p-3 rounded-lg border-l-4 border-indigo-500">
+                    <div class="font-medium text-gray-800">${project}</div>
+                </div>`
+            ).join('');
+
+            // Skills section
+            document.getElementById('modalSkills').innerHTML = data.skills.map(skillItem => 
+                `<span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">${skillItem}</span>`
+            ).join('');
+
+            // Show modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Animate modal
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('skillModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            // Animate out
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            // Hide modal
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('skillModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
