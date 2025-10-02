@@ -53,15 +53,21 @@
         .progress-bar {
             background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
         }
+        
+        /* Ensure equal height for skill cards */
+        .skill-card-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <!-- Header -->
+    <!-- Header (unchanged) -->
     <header class="bg-white shadow-xl relative z-50">
         <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text gradient-bg">Abimanyu</a>
-            <!-- Desktop Nav -->
             <div class="hidden md:flex space-x-8">
                 <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium">About</a>
                 <a href="#education" class="text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium">Education</a>
@@ -70,14 +76,12 @@
                 <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium">Projects</a>
                 <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium">Contact</a>
             </div>
-            <!-- Mobile menu button -->
             <button id="mobileMenuButton" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-40">
             <div class="px-4 py-4 space-y-4">
                 <a href="#about" class="block text-gray-600 hover:text-indigo-600 transition-all duration-300 font-medium py-2">About</a>
@@ -90,7 +94,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (unchanged) -->
     <section class="gradient-bg text-white text-center py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="relative z-10">
@@ -98,13 +102,12 @@
             <p class="text-lg sm:text-xl md:text-2xl mb-12 font-light">I'm a passionate developer with 4 years of experience in IT.</p>
             <a href="#contact" class="bg-white text-indigo-600 hover:bg-indigo-50 font-bold py-3 sm:py-4 px-8 sm:px-12 rounded-full text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl">Get in Touch</a>
         </div>
-        <!-- Floating elements -->
         <div class="absolute top-20 left-10 w-20 h-20 bg-white opacity-10 rounded-full floating"></div>
         <div class="absolute top-40 right-20 w-32 h-32 bg-white opacity-5 rounded-full floating"></div>
         <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-white opacity-10 rounded-full floating"></div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (Updated with Resume Download) -->
     <section id="about" class="py-16 sm:py-20 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6">
             <h2 class="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800">About Me</h2>
@@ -129,12 +132,18 @@
                             <div class="text-gray-600 font-medium">Projects Completed</div>
                         </div>
                     </div>
+                    <!-- Resume Download Button -->
+<div class="mt-8 text-center">
+                        <a href="https://abimanyuq.github.io/Portfolio/Abimanyu_resume.pdf" download="Abimanyu_resume.pdf" target="_blank" class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 text-sm sm:text-base inline-flex items-center">
+                            <span class="mr-2">📄</span> Download Resume
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
+    <!-- Education Section (unchanged) -->
     <section id="education" class="py-16 sm:py-20 md:py-24 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
             <h2 class="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800">Education</h2>
@@ -174,13 +183,11 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section (unchanged) -->
     <section id="experience" class="py-16 sm:py-20 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6">
             <h2 class="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800">Professional Experience</h2>
             <div class="max-w-5xl mx-auto">
-                
-                <!-- Current Position -->
                 <div class="relative flex flex-col md:block">
                     <div class="absolute left-4 md:left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-blue-500 hidden md:block"></div>
                     
@@ -227,7 +234,6 @@
                         </div>
                     </div>
 
-                    <!-- Previous Position -->
                     <div class="relative bg-white rounded-3xl p-6 sm:p-8 shadow-xl ml-0 md:ml-20 transform hover:scale-105 transition-all duration-300">
                         <div class="absolute -left-4 md:-left-12 top-8 w-8 h-8 bg-blue-500 rounded-full border-4 border-white shadow-lg"></div>
                         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
@@ -270,7 +276,6 @@
                     </div>
                 </div>
 
-                <!-- Career Progression Summary -->
                 <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl p-6 sm:p-8 mt-12 sm:mt-16 text-white text-center">
                     <h3 class="text-xl sm:text-2xl font-bold mb-4">Career Journey Summary</h3>
                     <p class="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
@@ -297,15 +302,15 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section (Updated for Equal Heights) -->
     <section id="skills" class="py-16 sm:py-20 md:py-24 bg-gray-900 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 opacity-50"></div>
         <div class="container mx-auto px-4 sm:px-6 relative z-10">
             <h2 class="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-16 text-white">My Expertise</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
                 <!-- Vue.js Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('vue')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('vue')">
                         <div class="text-4xl sm:text-5xl mb-4">🟢</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">Vue.js</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -316,8 +321,8 @@
                 </div>
 
                 <!-- React.js Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('react')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('react')">
                         <div class="text-4xl sm:text-5xl mb-4">⚛️</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">React.js</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -328,8 +333,8 @@
                 </div>
 
                 <!-- Laravel Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('laravel')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('laravel')">
                         <div class="text-4xl sm:text-5xl mb-4">🔴</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">Laravel</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -340,8 +345,8 @@
                 </div>
 
                 <!-- API Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('api')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('api')">
                         <div class="text-4xl sm:text-5xl mb-4">🔗</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">API</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -352,8 +357,8 @@
                 </div>
 
                 <!-- Node.js Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('node')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('node')">
                         <div class="text-4xl sm:text-5xl mb-4">💚</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">Node.js</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -364,8 +369,8 @@
                 </div>
 
                 <!-- RestAPI Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('restapi')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('restapi')">
                         <div class="text-4xl sm:text-5xl mb-4">🚀</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">RestAPI</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -376,8 +381,8 @@
                 </div>
 
                 <!-- Python Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('python')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('python')">
                         <div class="text-4xl sm:text-5xl mb-4">🐍</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">Python</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -388,8 +393,8 @@
                 </div>
 
                 <!-- MySQL Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('mysql')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('mysql')">
                         <div class="text-4xl sm:text-5xl mb-4">🗄️</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">MySQL</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -400,8 +405,8 @@
                 </div>
 
                 <!-- Server Management Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('server')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('server')">
                         <div class="text-4xl sm:text-5xl mb-4">⚙️</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">Server Mgmt</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -412,8 +417,8 @@
                 </div>
 
                 <!-- MongoDB Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('mongodb')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('mongodb')">
                         <div class="text-4xl sm:text-5xl mb-4">🍃</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">MongoDB</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -424,8 +429,8 @@
                 </div>
 
                 <!-- JavaScript Skill -->
-                <div class="skill-card cursor-pointer" onclick="openModal('javascript')">
-                    <div class="glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating">
+                <div class="skill-card">
+                    <div class="skill-card-container glass-effect p-6 sm:p-8 rounded-3xl shadow-2xl transform hover:scale-110 transition-all duration-500 floating" onclick="openModal('javascript')">
                         <div class="text-4xl sm:text-5xl mb-4">📜</div>
                         <h3 class="text-lg sm:text-xl font-bold text-white">JavaScript</h3>
                         <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
@@ -438,23 +443,18 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section (unchanged) -->
     <section id="projects" class="py-16 sm:py-20 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6">
             <h2 class="text-4xl sm:text-5xl font-bold text-center mb-12 sm:mb-16 text-gray-800">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-7xl mx-auto">
-                
-                <!-- Project 1: Laravel Admin Portal -->
                 <div class="bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 group">
                     <div class="relative bg-gradient-to-br from-red-500 via-red-600 to-orange-600 h-48 sm:h-56 md:h-64 flex items-center justify-center">
-                        <!-- Laravel Logo SVG -->
                         <div class="text-white text-6xl sm:text-8xl font-bold opacity-20 absolute inset-0 flex items-center justify-center">
                             <svg viewBox="0 0 50 52" class="w-24 sm:w-32 h-24 sm:h-32 fill-current">
-                                <path d="M49.626 11.564a.809.809 0 0 1 .028.209v10.972a.8.8 0 0 1-.402.694l-9.209 5.302V39.25c0 .286-.152.55-.4.694L20.42 51.01c-.044.025-.092.041-.14.058-.018.006-.035.017-.054.022a.805.805 0 0 1-.41 0c-.022-.006-.042-.018-.063-.026-.044-.016-.09-.03-.132-.054L.402 39.944A.801.801 0 0 1 0 39.25V6.334c0-.072.01-.142.028-.21.006-.023.02-.044.028-.067.015-.042.029-.085.051-.124.015-.026.037-.047.055-.071.023-.032.044-.065.071-.093.023-.023.053-.04.079-.06.029-.024.055-.050.088-.069h.001l9.61-5.533a.802.802 0 0 1 .8 0l9.61 5.533h.002c.032.02.059.045.088.068.026.02.055.038.078.06.028.029.048.062.072.094.017.024.04.045.054.071.023.04.036.082.052.124.008.023.022.044.028.068a.809.809 0 0 1 .028.209v20.559l8.008-4.611v-10.51c0-.07.01-.141.028-.208.007-.024.02-.045.028-.068.016-.042.03-.085.052-.124.015-.026.037-.047.054-.071.024-.032.044-.065.072-.093.023-.023.052-.04.078-.06.03-.024.056-.05.088-.069h.001l9.611-5.533a.801.801 0 0 1 .8 0l9.61 5.533c.034.02.06.045.09.068.025.02.054.038.077.06.028.029.048.062.072.094.018.024.04.045.054.071.023.039.036.082.052.124.009.023.022.044.028.068zm-1.574 10.718v-9.124l-3.363 1.936-4.646 2.675v9.124l8.01-4.611zm-9.61 16.505v-9.13l-4.57 2.61-13.05 7.448v9.216l17.62-10.144zM1.602 7.719v31.068L19.22 48.93v-9.214l-9.204-5.209-.003-.002-.004-.002c-.031-.018-.057-.044-.086-.066-.025-.02-.054-.036-.076-.058l-.002-.003c-.026-.025-.044-.056-.066-.084-.02-.027-.044-.05-.06-.078l-.001-.003c-.018-.030-.029-.066-.042-.1-.013-.03-.03-.058-.038-.09v-.001c-.01-.038-.012-.078-.016-.117-.004-.03-.012-.06-.012-.09V21.041L1.602 7.719zm8.81-5.994L2.405 6.334l8.005 4.609 8.006-4.61-8.005-4.608zm4.164 28.764l4.645-2.674V7.719l-3.363 1.936-4.646 2.675v20.097l3.364-1.938zM39.243 7.164l-8.006 4.609 8.006 4.609 8.005-4.61-8.005-4.608zm-.801 10.605l-4.646-2.675-3.363-1.936v9.124l4.645 2.674 3.364 1.937v-9.124zM20.02 38.33l11.743-6.704 5.87-3.35-8-4.606-9.211 5.303-8.395 4.833 7.993 4.524z"/>
+                                <path d="M49.626 11.564a.809.809 0 0 1 .028.209v10.972a.8.8 0 0 1-.402.694l-9.209 5.302V39.25c0 .286-.152.55-.4.694L20.42 51.01c-.044.025-.092.041-.14.058-.018.006-.035.017-.054.022a.805.805 0 0 1-.41 0c-.022-.006-.042-.018-.063-.026-.044-.016-.09-.03-.132-.054L.402 39.944A.801.801 0 0 1 0 39.25V6.334c0-.072.01-.142.028-.21.006-.023.02-.044.028-.067.015-.042.029-.085.051-.124.015-.026.037-.047.055-.071.023-.032.044-.065.071-.093.023-.023.053-.04.079-.06.029-.024.055-.050.088-.069h.001l9.61-5.533a.802.802 0 0 1 .8 0l9.61 5.533h.002c.032.02.059.045.088.068.026.02.055.038.078.06.028.029.048.062.072.094.017.024.04.045.054.071.023.04.036.082.052.124.008.023.022.044.028.068a.809.809 0 0 1 .028.209v20.559l8.008-4.611v-10.51c0-.07.01-.141.028-.208.007-.024.02-.045.028-.068.016-.042.03-.085.052-.124.015-.026.037-.047.054-.071.024-.032.044-.065.072-.093.023-.023.052-.04.078-.06.03-.024.056-.05.088-.069h.001l9.611-5.533a.801.801 0 0 1 .8 0l9.61 5.533c.034.02.06.045.09.068.025.02.054.038.077.06.028.029.048.062.072.094.018.024.04.045.054.071.023.039.036.082.052.124.009.023.022.044.028.068zm-1.574 10.718v-9.124l-3.363 1.936-4.646 2.675v9.124l8.01-4.611zm-9.61 16.505v-9.13l-4.57 2.61-13.05 7.448v9.216l17.62-10.144zM1.602 7.719v31.068L19.22 48.93v-9.214l-9.204-5.209-.003-.002-.004-.002c-.031-.018-.057-.044-.086-.066-.025-.020-.054-.036-.076-.058l-.002-.003c-.026-.025-.044-.056-.066-.084-.020-.027-.044-.05-.06-.078l-.001-.003c-.018-.030-.029-.066-.042-.100-.013-.030-.03-.058-.038-.090v-.001c-.01-.038-.012-.078-.016-.117-.004-.030-.012-.06-.012-.090V21.041L1.602 7.719zm8.81-5.994L2.405 6.334l8.005 4.609 8.006-4.610-8.005-4.608zm4.164 28.764l4.645-2.674V7.719l-3.363 1.936-4.646 2.675v20.097l3.364-1.938zM39.243 7.164l-8.006 4.609 8.006 4.609 8.005-4.610-8.005-4.608zm-.801 10.605l-4.646-2.675-3.363-1.936v9.124l4.645 2.674 3.364 1.937v-9.124zM20.02 38.33l11.743-6.704 5.87-3.350-8-4.606-9.211 5.303-8.395 4.833 7.993 4.524z"/>
                             </svg>
                         </div>
-                        
-                        <!-- Project Logo/Icon -->
                         <div class="relative z-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white border-opacity-30">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
@@ -466,7 +466,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="absolute inset-0 bg-gradient-to-t from-black opacity-40"></div>
                     </div>
                     <div class="p-6 sm:p-8">
@@ -477,11 +476,9 @@
                                 <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">Vue.js</span>
                             </div>
                         </div>
-                        
                         <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
                             Complete admin dashboard with user portal featuring JWT authentication, role-based access control, and comprehensive data visualization using Chart.js for analytics.
                         </p>
-                        
                         <div class="mb-6">
                             <h5 class="font-semibold text-gray-700 mb-3">Key Features:</h5>
                             <div class="grid grid-cols-2 gap-2 text-sm">
@@ -511,7 +508,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="flex space-x-3">
                             <a href="#" class="flex-1 bg-gradient-to-r from-red-500 to-orange-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 text-center text-sm sm:text-base">
                                 View Project →
@@ -523,10 +519,8 @@
                     </div>
                 </div>
 
-                <!-- Project 2: React Billing Software -->
                 <div class="bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 group">
                     <div class="relative bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 h-48 sm:h-56 md:h-64 flex items-center justify-center">
-                        <!-- React Logo SVG -->
                         <div class="text-white text-6xl sm:text-8xl font-bold opacity-20 absolute inset-0 flex items-center justify-center">
                             <svg viewBox="-11.5 -10.23174 23 20.46348" class="w-24 sm:w-32 h-24 sm:h-32 fill-current">
                                 <circle cx="0" cy="0" r="2.05" fill="currentColor"/>
@@ -537,8 +531,6 @@
                                 </g>
                             </svg>
                         </div>
-                        
-                        <!-- Project Logo/Icon -->
                         <div class="relative z-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white border-opacity-30">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
@@ -550,7 +542,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="absolute inset-0 bg-gradient-to-t from-black opacity-40"></div>
                     </div>
                     <div class="p-6 sm:p-8">
@@ -561,11 +552,9 @@
                                 <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">QR Code</span>
                             </div>
                         </div>
-                        
                         <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
                             Modern POS billing software with QR code scanning, real-time data visualization, integrated payment methods, and comprehensive sales analytics dashboard.
                         </p>
-                        
                         <div class="mb-6">
                             <h5 class="font-semibold text-gray-700 mb-3">Key Features:</h5>
                             <div class="grid grid-cols-2 gap-2 text-sm">
@@ -595,7 +584,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="flex space-x-3">
                             <a href="#" class="flex-1 bg-gradient-to-r from-blue-500 to-teal-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 text-center text-sm sm:text-base">
                                 View Project →
@@ -607,10 +595,8 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Music Mastering API (Enhanced) -->
                 <div class="bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 group md:col-span-2">
                     <div class="relative bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 h-48 flex items-center justify-center">
-                        <!-- Audio Wave Animation -->
                         <div class="absolute inset-0 flex items-center justify-center opacity-20">
                             <div class="flex space-x-1">
                                 <div class="w-1 bg-white rounded-full animate-pulse" style="height: 20px; animation-delay: 0s;"></div>
@@ -623,7 +609,6 @@
                                 <div class="w-1 bg-white rounded-full animate-pulse" style="height: 55px; animation-delay: 0.7s;"></div>
                             </div>
                         </div>
-                        
                         <div class="relative z-10 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white border-opacity-30">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
@@ -646,11 +631,9 @@
                                         <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs font-medium">Python</span>
                                     </div>
                                 </div>
-                                
                                 <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
                                     Advanced music processing platform using Dolby API integration for duplicate detection and audio enhancement from standard to master quality with real-time processing.
                                 </p>
-                                
                                 <div class="flex space-x-3">
                                     <a href="#" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 text-sm sm:text-base">
                                         View Project →
@@ -660,7 +643,6 @@
                                     </button>
                                 </div>
                             </div>
-                            
                             <div>
                                 <h5 class="font-semibold text-gray-700 mb-3">Technical Features:</h5>
                                 <div class="space-y-3">
@@ -689,12 +671,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (unchanged) -->
     <section id="contact" class="gradient-bg text-white py-16 sm:py-20 md:py-24 relative overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-30"></div>
         <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
@@ -713,61 +694,51 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (unchanged) -->
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-4 sm:px-6 text-center">
             <p class="text-gray-400">&copy; 2025 Abimanyu. All rights reserved. Built with passion and code.</p>
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal (unchanged) -->
     <div id="skillModal" class="fixed inset-0 modal-backdrop hidden items-center justify-center z-50">
         <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl mx-4 transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
             <div class="flex justify-between items-center mb-6">
                 <h3 id="modalTitle" class="text-2xl sm:text-3xl font-bold text-gray-800"></h3>
                 <button onclick="closeModal()" class="text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
             </div>
-            
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
                     <h4 class="text-lg sm:text-xl font-semibold mb-4 text-indigo-600">Experience Overview</h4>
-                    <div class="space-y-3" id="modalExperience">
-                        <!-- Experience content will be populated by JavaScript -->
-                    </div>
+                    <div class="space-y-3" id="modalExperience"></div>
                 </div>
-                
                 <div>
                     <h4 class="text-lg sm:text-xl font-semibold mb-4 text-indigo-600">Key Projects</h4>
-                    <div class="space-y-3" id="modalProjects">
-                        <!-- Projects content will be populated by JavaScript -->
-                    </div>
+                    <div class="space-y-3" id="modalProjects"></div>
                 </div>
             </div>
-            
             <div class="mt-8">
                 <h4 class="text-lg sm:text-xl font-semibold mb-4 text-indigo-600">Skills & Technologies</h4>
-                <div id="modalSkills" class="flex flex-wrap gap-2">
-                    <!-- Skills tags will be populated by JavaScript -->
-                </div>
+                <div id="modalSkills" class="flex flex-wrap gap-2"></div>
             </div>
         </div>
     </div>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle (unchanged)
         document.getElementById('mobileMenuButton').addEventListener('click', function() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('#mobileMenu a').forEach(link => {
             link.addEventListener('click', function() {
                 document.getElementById('mobileMenu').classList.add('hidden');
             });
         });
 
-        // Skill data structure
+        // Skill data structure (unchanged)
         const skillsData = {
             vue: {
                 title: "Vue.js",
@@ -896,34 +867,23 @@
 
             if (!data) return;
 
-            // Populate modal content
             document.getElementById('modalTitle').textContent = data.title;
-            
-            // Experience section
             document.getElementById('modalExperience').innerHTML = `
                 <div class="bg-gray-100 p-4 rounded-lg">
                     <div class="font-semibold text-gray-800">${data.experience}</div>
                     <div class="text-gray-600 mt-2">${data.description}</div>
                 </div>
             `;
-
-            // Projects section
             document.getElementById('modalProjects').innerHTML = data.projects.map(project => 
                 `<div class="bg-indigo-50 p-3 rounded-lg border-l-4 border-indigo-500">
                     <div class="font-medium text-gray-800">${project}</div>
                 </div>`
             ).join('');
-
-            // Skills section
             document.getElementById('modalSkills').innerHTML = data.skills.map(skillItem => 
                 `<span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">${skillItem}</span>`
             ).join('');
-
-            // Show modal
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
-            // Animate modal
             setTimeout(() => {
                 modalContent.classList.remove('scale-95', 'opacity-0');
                 modalContent.classList.add('scale-100', 'opacity-100');
@@ -933,33 +893,26 @@
         function closeModal() {
             const modal = document.getElementById('skillModal');
             const modalContent = document.getElementById('modalContent');
-            
-            // Animate out
             modalContent.classList.remove('scale-100', 'opacity-100');
             modalContent.classList.add('scale-95', 'opacity-0');
-            
-            // Hide modal
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }, 300);
         }
 
-        // Close modal when clicking outside
         document.getElementById('skillModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
             }
         });
 
-        // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -970,7 +923,6 @@
                         block: 'start'
                     });
                 }
-                // Close mobile menu if open
                 document.getElementById('mobileMenu').classList.add('hidden');
             });
         });
